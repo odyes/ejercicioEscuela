@@ -17,6 +17,12 @@ use App\Http\Controllers\AlumnosController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+//Index
 Route::get('/alumnos', [AlumnosController::class, 'index'])
     ->name('alumnos.index');
+
+Route::get('/alumnos/create', [AlumnosController::class, 'create'])
+    ->name('alumnos.create');
+
+Route::post('/alumnos', [AlumnosController::class, 'store'])
+    ->name('alumnos.store');
