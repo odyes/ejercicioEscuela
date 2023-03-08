@@ -9,12 +9,24 @@
 </head>
 <body>
     <h1>Crear alumno</h1>
+    @if(Session::has('exito'))
+        <p>{{Session::get('exito')}}</p>
+    @endif
     <a href="{{route('alumnos.index')}}">Volver a la lista de alumnos</a>
     <form action="{{route('alumnos.store')}}" method="POST">
         @csrf
         <div>
             <label>Nombre: </label>
             <input type="text" name="nombre">
+        </div>
+        <div>
+            <label>Carrera: </label>
+            <select name="carrera">
+                <option value="" selected disabled>Elige una carrera</option>
+                @foreach($carreras as $carrera)
+                <option value="{{$carrera->id}}">{{$carrera->nombre}}</option>
+                @endforeach
+            </select>
         </div>
         <div>
             <button type="submit">Crear alumno</button>

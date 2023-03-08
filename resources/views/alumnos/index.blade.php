@@ -22,7 +22,7 @@
                 <td>{{$alumno->nombre}}</td>
                 <td>
                     <a href="{{route('alumnos.edit',$alumno->id)}}">Editar</a>
-                    <button>Eliminar</button>
+                    <a href="{{route('alumnos.delete',$alumno->id)}}">Eliminar</a> 
                 </td> 
             </tr>
             @endforeach

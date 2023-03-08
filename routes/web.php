@@ -13,6 +13,8 @@ use App\Http\Controllers\AlumnosController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//Put actualizar
+//get 
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,3 +37,11 @@ Route::get('/alumnos/{id}/edit', [AlumnosController::class, 'edit'])
 //actualizar editar
 Route::put('/alumnos/{id}', [AlumnosController::class, 'update'])
     ->name('alumnos.update');  
+
+//COnfirmacion para borrar
+Route::get('/alumnos/{id}/delete', [AlumnosController::class, 'delete'])
+    ->name('alumnos.delete'); 
+//Eliminar
+Route::delete('/alumnos/{id}', [AlumnosController::class, 'destroy'])
+    ->name('alumnos.destroy'); 
+
