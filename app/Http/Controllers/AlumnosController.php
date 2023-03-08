@@ -22,7 +22,7 @@ class AlumnosController extends Controller
         $argumentos = array();
         $carreras = Carrera::all();
         $argumentos['carreras']=$carreras;
-        return view('alumnos.create', $argumentos);
+        return view('alumnos.create', $argumentos); 
     }
 
     public function store(Request $request){
